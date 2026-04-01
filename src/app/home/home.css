@@ -1,0 +1,115 @@
+.container {
+  padding: 40px;
+  background: #f1f5f9;
+  min-height: 100vh;
+}
+
+/* TITLE */
+h1 {
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* FLEX GRID */
+.card-container {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* 🔥 PREMIUM CARD */
+.card {
+  flex: 1 1 30%;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* gradient top line */
+.card::before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(90deg, #ff416c, #ff4b2b);
+  top: 0;
+  left: 0;
+}
+
+/* hover effect */
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* BUTTON STYLE */
+.card a {
+  text-decoration: none;
+  padding: 8px 15px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.card a:hover {
+  opacity: 0.8;
+}
+.container {
+  padding: 40px;
+  background: #f1f5f9;
+  min-height: 100vh;
+}
+
+/* 🔥 GRID LAYOUT (BEST) */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* 👇 FIX WIDTH */
+.card {
+  flex: 1 1 calc(33.33% - 20px);  /* 3 cards per row */
+  max-width: calc(33.33% - 20px);
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+/* hover */
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 900px) {
+  .card {
+    flex: 1 1 calc(50% - 20px);  /* 2 per row */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex: 1 1 100%;  /* 1 per row */
+    max-width: 100%;
+  }
+}

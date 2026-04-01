@@ -1,0 +1,42 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.nav h2 {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  position: relative;
+}
+
+/* 🔥 underline animation */
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: yellow;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.active {
+  border-bottom: 2px solid yellow;
+}
