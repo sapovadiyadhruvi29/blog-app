@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Navbar } from './navbar/navbar';
+// app.ts
+import { Component, signal } from '@angular/core';
+import {  RouterOutlet } from '@angular/router'; // RouterOutlet હોવું જરૂરી છે
+import { Navbar } from "./navbar/navbar";
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, Navbar],
-  templateUrl: './app.html'
+  standalone: true, 
+  imports: [Navbar,  RouterOutlet], 
+  templateUrl: './app.html',
+  styleUrl: './app.css'
 })
-export class App {}
+export class App {
+  protected readonly title = signal('blog-app');
+}

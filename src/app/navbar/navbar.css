@@ -1,33 +1,33 @@
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 50px;
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
-  color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #F9F4EC;
+    padding: 18px 60px;
+    color: black;
+    cursor: pointer;
+
 }
 
-.nav h2 {
-  font-size: 24px;
-  letter-spacing: 1px;
+h2{
+    font-size: 40px;
+    letter-spacing: 1px;
 }
 
-.nav a {
+a {
   margin-left: 25px;
   text-decoration: none;
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: 600;
   position: relative;
 }
 
-/* 🔥 underline animation */
 .nav a::after {
   content: "";
   position: absolute;
   width: 0%;
   height: 2px;
-  background: yellow;
+  background: rgb(0, 0, 0);
   left: 0;
   bottom: -5px;
   transition: 0.3s;
@@ -37,6 +37,12 @@
   width: 100%;
 }
 
-.active {
-  border-bottom: 2px solid yellow;
+.start{
+    margin-left: 20px;
+    border-radius: 20px;
+    background: black;
+    color: white;
+    padding: 4px;
+    font-size: 15px;
+
 }

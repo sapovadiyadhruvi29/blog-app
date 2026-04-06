@@ -1,16 +1,16 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
-import { PostDetail } from './post-detail/post-detail';
 import { About } from './about/about';
-import { NotFound} from './not-found/not-found';
-import { AddPost} from './add-post/add-post';
-import { EditPost } from './edit-post/edit-post';
+import { Login } from './login/login';
+import { Postdetails } from './postdetails/postdetails';
+import { Notfound } from './notfound/notfound';
+import { Membership } from './membership/membership';
 
 export const routes: Routes = [
-  { path: '', component: Home },
-  { path: 'post/:id', component: PostDetail},
-  { path: 'add', component: AddPost},
-  { path: 'edit/:id', component: EditPost },
-  { path: 'about', component: About },
-  { path: '**', component: NotFound }
+    {path:'' ,component:Login},
+    {path:'membership',component:Membership},
+    {path:'home', component:Home},
+    {path:'about' ,component:About},
+    {path:'postdetail' ,component:Postdetails},
+    {path:'**' ,component:Notfound}
 ];

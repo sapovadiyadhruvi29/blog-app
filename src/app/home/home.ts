@@ -1,27 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { BlogService } from '../blog';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [],
   templateUrl: './home.html',
-  styleUrls: ['./home.css']
+  styleUrl: './home.css',
 })
-export class Home implements OnInit {
-
-  posts: any[] = [];
-
-  constructor(private blog: BlogService) {}
-
-  ngOnInit() {
-    this.posts = this.blog.getPosts();
-  }
-
-  delete(id: any) {
-    this.blog.deletePost(id);
-    this.posts = this.blog.getPosts();
-  }
-}
+export class Home {}
