@@ -4,13 +4,17 @@ import { BlogService } from '../blog';
 import { FormsModule } from '@angular/forms';
 
 @Component({
+  selector: 'app-edit-post',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './edit-post.html'
+  templateUrl: './edit-post.html',
+  styleUrl: './edit-post.css'
 })
 export class EditPost {
-
-  post: any;
+  post: any = {
+    title: '',
+    desc: ''
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -18,11 +22,21 @@ export class EditPost {
     private router: Router
   ) {
     const id = this.route.snapshot.paramMap.get('id');
-    this.post = this.blog.getPostById(id);
+    const data = this.blog.getPostById(id);
+
+    if (data) {
+      this.post = { ...data };
+    }
   }
 
-  update() {
+  updatePost() {
+    if (!this.post.title || !this.post.desc) {
+      alert('Please fill all fields');
+      return;
+    }
+
     this.blog.updatePost(this.post);
-    this.router.navigate(['/']);
+    alert('Post updated successfully');
+    this.router.navigate(['/home']);
   }
 }

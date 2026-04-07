@@ -1,1 +1,18 @@
-<p>postdetails works!</p>
+<div class="post-grid">
+    <div class="post-card" *ngFor="let item of posts">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.desc }}</p>
+
+        <div class="btn-row">
+            <button class="view-btn" [routerLink]="['/post-detail', item.id]">
+                View Details
+            </button>
+
+            <div class="icon-row">
+                <i class="bi bi-pencil-square edit-icon" [routerLink]="['/edit-post', item.id]"></i>
+
+                <i class="bi bi-trash delete-icon" (click)="deletePost(item.id)"></i>
+            </div>
+        </div>
+    </div>
+</div>

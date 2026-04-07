@@ -1,6 +1,17 @@
-<h2>Add Post</h2>
+<div class="post-page">
+  <div class="post-box">
+    <h2>Add New Post</h2>
 
-<input [(ngModel)]="title" placeholder="Title"><br><br>
-<textarea [(ngModel)]="desc" placeholder="Description"></textarea><br><br>
+    <div class="input-group">
+      <label>Title</label>
+      <input type="text" [(ngModel)]="title" placeholder="Enter post title">
+    </div>
 
-<button (click)="addPost()">Save</button>
+    <div class="input-group">
+      <label>Description</label>
+      <textarea rows="6" [(ngModel)]="desc" placeholder="Write your post"></textarea>
+    </div>
+
+    <button (click)="addPost()">Add Post</button>
+  </div>
+</div>

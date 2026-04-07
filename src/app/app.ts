@@ -1,6 +1,6 @@
 // app.ts
 import { Component, signal } from '@angular/core';
-import {  RouterOutlet } from '@angular/router'; // RouterOutlet હોવું જરૂરી છે
+import {  RouterOutlet } from '@angular/router';
 import { Navbar } from "./navbar/navbar";
 
 @Component({

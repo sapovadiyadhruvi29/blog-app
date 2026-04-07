@@ -7,18 +7,30 @@ import { BlogService } from '../blog';
   selector: 'app-add-post',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './add-post.html'
+  templateUrl: './add-post.html',
+  styleUrl: './add-post.css'
 })
-export class AddPost{
-
+export class AddPost {
   title = '';
   desc = '';
 
-  constructor(private blog: BlogService, private router: Router) {}
+  constructor(
+    private blog: BlogService,
+    private router: Router
+  ) {}
 
   addPost() {
-    this.blog.addPost({ title: this.title, desc: this.desc });
-    this.router.navigate(['/']);
-  }
+    if (!this.title || !this.desc) {
+      alert('Please fill all fields');
+      return;
+    }
 
+    this.blog.addPost({
+      title: this.title,
+      desc: this.desc
+    });
+
+    alert('Post added successfully');
+    this.router.navigate(['/home']);
+  }
 }
