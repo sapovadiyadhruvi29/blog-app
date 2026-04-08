@@ -1,0 +1,47 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    height: 85vh;
+
+    
+
+}
+
+.text {
+    width: 60%;
+
+}
+
+h1 {
+    font-family: 'Akshar';
+    font-size: 120px;
+    margin-top: 80px;
+    margin-left: 50px;
+}
+
+p {
+    margin-left: 50px;
+    font-size: 25px;
+    font-family: 'Akshar';
+    
+}
+
+button {
+    height: 40px;
+    width: 190px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    margin-left: 50px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.image {
+
+    margin: 10px;
+    padding-left: 90px;
+    height: 40px;
+    width: 40%;
+    background: white;
+}

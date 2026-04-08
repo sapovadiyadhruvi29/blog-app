@@ -1,18 +1,38 @@
-<div class="post-grid">
-    <div class="post-card" *ngFor="let item of posts">
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.desc }}</p>
+<app-navbar></app-navbar>
 
-        <div class="btn-row">
-            <button class="view-btn" [routerLink]="['/post-detail', item.id]">
-                View Details
-            </button>
+<div class="postpage">
 
-            <div class="icon-row">
-                <i class="bi bi-pencil-square edit-icon" [routerLink]="['/edit-post', item.id]"></i>
+    <div class="row">
+        <button routerLink="/add-post" style="margin: 20px;">
+            + Add Blog
+        </button>
+    </div>
 
-                <i class="bi bi-trash delete-icon" (click)="deletePost(item.id)"></i>
+    <div class="row1">
+
+        @for (post of posts; track $index) {
+
+        <div class="card" style="width: 16rem;">
+
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <h6>By: {{ post.author }}</h6>
+                <p class="card-text">{{ post.description }}</p>
+
+                <button (click)="editPost($index)"
+                    style="background: rgb(154, 214, 237); height: 40px; font-size: 20px; margin-right: 10px; border: 1px solid yellowgreen; color: black;">
+                    Edit
+                </button>
+
+                <button (click)="deletePost($index)"
+                    style="background: rgb(238, 33, 26); height: 40px; font-size: 20px; color: white; border: 1px solid yellowgreen;">
+                    Delete
+                </button>
             </div>
+
         </div>
+
+        }
+
     </div>
 </div>

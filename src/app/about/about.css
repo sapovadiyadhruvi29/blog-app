@@ -1,0 +1,36 @@
+.about {
+    height: auto;
+    display: flex;
+    background: whitesmoke;
+    flex-direction: column;
+    color: black;
+}
+
+.content {
+    width: 60%;
+    margin: 80px;
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    font-size: 100px;
+    font-family: 'Akshar';
+}
+h5{
+    color: rgb(0, 0, 0);
+    font-family: 'Akshar';
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+h3{
+    color: rgb(205, 192, 192);
+    font-size: 40px;
+}
+.section{
+    display: flex;
+    flex-direction: column;
+
+}
+.svg{
+    align-items: end;
+}

@@ -1,37 +1,35 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class BlogService {
 
-  getPosts() {
-    return JSON.parse(localStorage.getItem('posts') || '[]');
+
+// Service aapde data store karva mate banavi 
+
+export class Blog {
+
+
+  posts: any[] = [];
+
+  getpost() {
+    return this.posts;
   }
 
-  savePosts(posts: any) {
-    localStorage.setItem('posts', JSON.stringify(posts));
+  addpost(post: any) {
+    this.posts.push(post);
   }
 
-  addPost(post: any) {
-    const posts = this.getPosts();
-    post.id = Date.now();
-    posts.push(post);
-    this.savePosts(posts);
+  deletepost(index: number) {
+    this.posts.splice(index,1);
   }
 
-  getPostById(id: any) {
-    return this.getPosts().find((p: any) => p.id == id);
+  getPost(index:number){ 
+    return this.posts[index]
   }
 
-  updatePost(updatedPost: any) {
-    let posts = this.getPosts();
-    posts = posts.map((p: any) => p.id == updatedPost.id ? updatedPost : p);
-    this.savePosts(posts);
+  editPost(index: number, editpost: any) {
+    this.posts[index] = editpost;
   }
 
-  deletePost(id: any) {
-    let posts = this.getPosts().filter((p: any) => p.id != id);
-    this.savePosts(posts);
-  }
 }

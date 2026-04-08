@@ -8,13 +8,12 @@ describe('AddPost', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddPost]
-    })
-    .compileComponents();
+      imports: [AddPost],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AddPost);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    await fixture.whenStable();
   });
 
   it('should create', () => {

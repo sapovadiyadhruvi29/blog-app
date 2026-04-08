@@ -1,24 +1,30 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { BlogService } from '../blog';
+import { Navbar } from "../navbar/navbar";
+import { Router, RouterLink } from "@angular/router";
+import { Blog } from '../blog';
 
 @Component({
   selector: 'app-postdetails',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [Navbar, RouterLink],
   templateUrl: './postdetails.html',
   styleUrl: './postdetails.css',
 })
 export class Postdetails {
+
   posts: any[] = [];
 
-  constructor(private blog: BlogService) {
-    this.posts = this.blog.getPosts();
+  constructor(private blog: Blog, private router: Router) { }
+
+  ngOnInit() {
+    this.posts = this.blog.getpost();
   }
 
-  deletePost(id: any) {
-    this.blog.deletePost(id);
-    this.posts = this.blog.getPosts();
+  deletePost(index:number) {
+    this.posts=this.posts.splice(index,1)
+  }
+
+  editPost(index: number) {
+    this.router.navigate(['/edit-post', index]);
   }
 }
+

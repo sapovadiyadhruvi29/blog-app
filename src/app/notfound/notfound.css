@@ -1,0 +1,33 @@
+
+
+.container4 {
+  text-align: center;
+}
+
+.image img {
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 32px;
+  color: #2d3436;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+button {
+  padding: 12px 40px;
+  background: #6c7ae0;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #5a67d8;
+  transform: scale(1.05);
+}
